@@ -40,8 +40,97 @@ If the user enters 'Q' or 'q' then you should display 'Goodbye" and the program 
 */
 #include <iostream>
 #include <vector>
+#include <string>
 
 using namespace std;
+
+void get_user_choice(char &option)
+{
+  cout << "\nP - Print numbers" << endl;
+  cout << "A - Add a number" << endl;
+  cout << "M - Display mean of the numbers" << endl;
+  cout << "S - Display the smallest number" << endl;
+  cout << "L - Display the largest number" << endl;
+  cout << "Q - Quit" << endl;
+
+  cout << "Enter your choice: ";
+  cin >> option;
+  option = toupper(option);
+}
+
+void print(const vector<int> &vec)
+{
+  cout << "[ ";
+  for (int item : vec)
+  {
+    cout << item << " ";
+  }
+  cout << "]" << endl;
+}
+
+void add(vector<int> &vec)
+{
+  int num{};
+  cout << "Number: ";
+  cin >> num;
+  vec.push_back(num);
+}
+
+void print_mean(const vector<int> &vec)
+{
+  if (vec.size() == 0)
+  {
+    cout << "No items in the list" << endl;
+    return;
+  }
+
+  int sum{};
+  for (int item : vec)
+  {
+    sum += item;
+  }
+  cout << "Mean: " << static_cast<double>(sum) / vec.size() << endl;
+}
+
+void print_smallest(const vector<int> &vec)
+{
+
+  if (vec.size() == 0)
+  {
+    cout << "No items in the list" << endl;
+    return;
+  }
+
+  int smallest{vec.at(0)};
+  for (int item : vec)
+  {
+    if (item < smallest)
+    {
+      smallest = item;
+    }
+  }
+  cout << "Smallest: " << smallest << endl;
+}
+
+void print_largest(const vector<int> &vec)
+{
+
+  if (vec.size() == 0)
+  {
+    cout << "No items in the list" << endl;
+    return;
+  }
+
+  int largest{vec.at(0)};
+  for (int item : vec)
+  {
+    if (item > largest)
+    {
+      largest = item;
+    }
+  }
+  cout << "Largest: " << largest << endl;
+}
 
 int main()
 {
@@ -50,87 +139,32 @@ int main()
   char option{};
   do
   {
-    cout << "\nP - Print numbers" << endl;
-    cout << "A - Add a number" << endl;
-    cout << "M - Display mean of the numbers" << endl;
-    cout << "S - Display the smallest number" << endl;
-    cout << "L - Display the largest number" << endl;
-    cout << "Q - Quit" << endl;
+    get_user_choice(option);
 
-    cout << "Enter your choice: ";
-    cin >> option;
-
-    if (option == 'q' || option == 'Q')
+    if (option == 'Q')
     {
       cout << "Exiting Program..." << endl;
       return 0;
     }
-    else if (option == 'p' || option == 'P')
+    else if (option == 'P')
     {
-      cout << "[ ";
-      for (int item : vec)
-      {
-        cout << item << " ";
-      }
-      cout << "]" << endl;
+      print(vec);
     }
-    else if (option == 'a' || option == 'A')
+    else if (option == 'A')
     {
-      int num{};
-      cout << "Number: ";
-      cin >> num;
-      vec.push_back(num);
+      add(vec);
     }
-    else if (option == 'm' || option == 'M')
+    else if (option == 'M')
     {
-      if (vec.size() == 0)
-      {
-        cout << "No items in the list" << endl;
-        continue;
-      }
-
-      int sum{};
-      for (int item : vec)
-      {
-        sum += item;
-      }
-      cout << "Mean: " << static_cast<double>(sum) / vec.size() << endl;
+      print_mean(vec);
     }
-    else if (option == 's' || option == 'S')
+    else if (option == 'S')
     {
-      if (vec.size() == 0)
-      {
-        cout << "No items in the list" << endl;
-        continue;
-      }
-
-      int smallest{vec.at(0)};
-      for (int item : vec)
-      {
-        if (item < smallest)
-        {
-          smallest = item;
-        }
-      }
-      cout << "Smallest: " << smallest << endl;
+      print_smallest(vec);
     }
-    else if (option == 'l' || option == 'L')
+    else if (option == 'L')
     {
-      if (vec.size() == 0)
-      {
-        cout << "No items in the list" << endl;
-        continue;
-      }
-
-      int largest{vec.at(0)};
-      for (int item : vec)
-      {
-        if (item > largest)
-        {
-          largest = item;
-        }
-      }
-      cout << "Largest: " << largest << endl;
+      print_largest(vec);
     }
     else
     {
