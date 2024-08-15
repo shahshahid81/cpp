@@ -1,5 +1,6 @@
 #include <iostream>
 
+// https://stackoverflow.com/questions/1452721/whats-the-problem-with-using-namespace-std
 using namespace std;
 
 int main()
