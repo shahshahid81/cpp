@@ -7,6 +7,7 @@ using namespace std;
 int main()
 {
 
+    // We also have void*. To use it, we need to cast it before use so that compiler can know about how many bytes to look for and how to perform pointer arithmetic based on the pointer type. 
     int num{10};
     cout << "Value of num is: " << num << endl;
     cout << "sizeof of num is: " << sizeof num << endl;
