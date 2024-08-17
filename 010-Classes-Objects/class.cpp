@@ -6,6 +6,7 @@ using namespace std;
 
 class Player
 {
+// Default is private.
 public:
     string Name;
 
@@ -24,10 +25,10 @@ int main()
     Player *player_ptr = new Player;
 
     cout << player.health << endl; // Will Print 100
-    cout << player.xp << endl;     // Will Print Garbage
+    cout << player.xp << endl; // Will Print Garbage
 
     cout << player_ptr->health << endl; // Will Print 100
-    cout << player_ptr->xp << endl;     // Will Print 0
+    cout << player_ptr->xp << endl; // Will Print 0
 
     return 0;
 }
