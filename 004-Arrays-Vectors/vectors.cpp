@@ -1,7 +1,12 @@
+using std::endl;
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using std::cout;
+using std::cin;
+using std::string;
+using std::endl;
+using std::vector;
 
 int main(int argc, char const *argv[])
 {
@@ -71,6 +76,7 @@ int main(int argc, char const *argv[])
     vector2.push_back(200);
 
     vector<vector<int>> vector_2d;
+    // Since we are passing value, copy will be created
     vector_2d.push_back(vector1);
     vector_2d.push_back(vector2);
 

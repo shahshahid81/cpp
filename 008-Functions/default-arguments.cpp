@@ -2,7 +2,7 @@
 #include <iomanip>
 #include <string>
 
-using namespace std;
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
 
 double calc_cost(double base_cost = 100.0, double tax_rate = 0.06, double shipping = 3.50);
 

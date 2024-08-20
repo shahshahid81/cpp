@@ -80,9 +80,12 @@ C++isFun!nuFsi++C
 #include <iostream>
 #include <string>
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
+using std::string;
 
-int main(int argc, char const *argv[])
+int main()
 {
 
   cout << "Enter string: ";

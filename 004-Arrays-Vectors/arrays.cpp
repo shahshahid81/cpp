@@ -1,14 +1,16 @@
 #include <iostream>
 
-using namespace std;
+using std::cin;
+using std::cout;
+using std::endl;
 
-int main(int argc, char const *argv[])
+int main()
 {
     char vowels[]{'a', 'e', 'i', 'o', 'u'}; // auto size detection
     cout << "\nThe first vowel is " << vowels[0] << endl;
     cout << "The last vowel is " << vowels[4] << endl;
 
-    // Array bounds are not checked, ensure to use correct index
+    // Array bounds are not checked, ensure to use correct indexs
     // cin >> vowels[5];
     // cout << "Out of Bounds " << vowels[5] << endl;
 

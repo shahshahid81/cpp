@@ -1,5 +1,8 @@
 // https://youtu.be/6KNdGnUiRBM?si=mt7vWTsF8bKfoG-K
 // https://en.cppreference.com/w/cpp/preprocessor
+
+// Basically a pre processor works by copying the text from the file in the program, which brings all the method declarations needed to run the program.
+// Always include h files. cpp files should not be used in include else there will be compiler errors.
 #include <iostream>
 
 int main()

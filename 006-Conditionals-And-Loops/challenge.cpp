@@ -41,7 +41,7 @@ If the user enters 'Q' or 'q' then you should display 'Goodbye" and the program 
 #include <iostream>
 #include <vector>
 
-using namespace std;
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
 
 int main()
 {
@@ -94,6 +94,8 @@ int main()
       {
         sum += item;
       }
+
+      // static_cast is more safer than c style cast because there are some checks performed at compile time unlike c where there is no check.
       cout << "Mean: " << static_cast<double>(sum) / vec.size() << endl;
     }
     else if (option == 's' || option == 'S')

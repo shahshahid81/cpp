@@ -1,7 +1,7 @@
 #include <iostream>
 
 // https://stackoverflow.com/questions/1452721/whats-the-problem-with-using-namespace-std
-using namespace std;
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
 
 int main()
 {

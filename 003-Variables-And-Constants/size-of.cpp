@@ -1,15 +1,27 @@
-// Section 6
-// The sizeof operator
-
 #include <iostream>
-#include <climits> // make sure you include climits for integer types
-                   // Similar information for floating point numbers
-                   // is contained in <cfloat>
+#include <climits> 
+// make sure you include climits for integer types
+// Similar information for floating point numbers
+// is contained in <cfloat>
 
-using namespace std;
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
 
 int main()
 {
+
+    // Variables will have different size on different machines based on whether the machine is 32 bit or 64 bit and there are implementation differences as well.
+
+    // The only things guaranteed about types are:
+    // sizeof(char) == 1
+    // sizeof(char) <= sizeof(short)
+    // sizeof(short) <= sizeof(int)
+    // sizeof(int) <= sizeof(long)
+    // sizeof(long) <= sizeof(long long)
+    // sizeof(char) * CHAR_BIT >= 8
+    // sizeof(short) * CHAR_BIT >= 16
+    // sizeof(int) * CHAR_BIT >= 16
+    // sizeof(long) * CHAR_BIT >= 32
+    // sizeof(long long) * CHAR_BIT >= 64
 
     cout << "sizeof information" << endl;
     cout << "========================" << endl;
