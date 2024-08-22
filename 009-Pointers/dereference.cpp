@@ -37,6 +37,7 @@ int main()
 
     cout << "\n------------------------------" << endl;
     vector<string> stooges{"Larry", "Moe", "Curly"};
+    // https://stackoverflow.com/questions/1282295/what-is-the-nullptr-keyword-and-why-is-it-better-than-null#1282345
     vector<string> *vector_ptr{nullptr};
 
     vector_ptr = &stooges;
