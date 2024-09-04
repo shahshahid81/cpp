@@ -13,9 +13,9 @@ Trust_Account::Trust_Account(const char *name, const double balance, const doubl
 
 bool Trust_Account::deposit(double amount)
 {
-  if (amount >= 5000)
+  if (amount >= bonus_threshold)
   {
-    amount += 50;
+    amount += bonus_amount;
   }
 
   return Savings_Account::deposit(amount);
@@ -23,9 +23,12 @@ bool Trust_Account::deposit(double amount)
 
 bool Trust_Account::withdraw(double amount)
 {
-  if (number_of_withdrawals >= 3)
+  if (number_of_withdrawals >= max_withdrawal)
   {
-    std::cout << "More than 3 withdrawals are not allowed!!" << std::endl;
+    std::cout << "More than " << max_withdrawal << " withdrawals are not allowed!!" << std::endl;
+    return false;
+  } else if (amount > (balance * max_withdrawal_percentage)) {
+    std::cout << "More than " << (balance * max_withdrawal_percentage) << " amount is not allowed!!" << std::endl;
     return false;
   }
   bool status = Savings_Account::withdraw(amount);

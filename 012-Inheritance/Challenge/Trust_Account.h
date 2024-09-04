@@ -11,6 +11,12 @@ private:
   static constexpr const char *default_name = "Unnamed";
   static constexpr const double default_balance = 0;
   static constexpr const double default_interest_rate = 0.0;
+  static constexpr const double max_withdrawal_percentage = 0.2;
+  static constexpr const unsigned short bonus_threshold = 5000;
+  static constexpr const unsigned short bonus_amount = 50;
+  static constexpr const unsigned max_withdrawal = 3;
+
+protected:
   unsigned short number_of_withdrawals = 0;
 
 public:
