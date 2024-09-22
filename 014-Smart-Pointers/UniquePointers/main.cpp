@@ -31,6 +31,21 @@ int main()
     */
     std::unique_ptr<Test> t1{new Test{100}};
     // Using make_unique is the recommended approach. The parameters passed to make_unique are the ones that are passed to the constructor.
+    // make_unique decides which constructor to call by using 
+
+    // https://www.youtube.com/watch?v=F9fCmbyzBM0 -> remove_reference
+    // Move implementation
+    // template <class T>
+    // typename remove_reference<T>::type&&
+    // move(T&& a)
+    // {
+    //     return a;
+    // }
+    
+    // Reference forwarding, use to call the constructor
+    // https://www.youtube.com/watch?v=uVLm5OclfvQ
+    // https://www.youtube.com/watch?v=c5dQX6GV_4g
+
     std::unique_ptr<Test> t2 = std::make_unique<Test>(1000);
 
     std::unique_ptr<Test> t3;
