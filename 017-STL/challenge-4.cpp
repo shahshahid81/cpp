@@ -1,29 +1,36 @@
 #include <cctype>
-#include <deque>
+#include <stack>
+#include <queue>
 #include <iostream>
 #include <string>
-#include <vector>
 #include <iomanip>
 
 bool is_palindrome(const std::string &s)
 {
-  std::deque<char> dq;
+  // Use a stack and a queue to solve the problem.
+  std::stack<char> stk;
+  std::queue<char> q;
 
   for (const char &ch : s)
   {
-    if (std::isalpha(ch))
+    if (isalpha(ch))
     {
-      dq.push_back(std::toupper(ch));
+      stk.push(std::toupper(ch));
+      q.push(std::toupper(ch));
     }
   }
 
-  while (dq.size() > 1 && dq.front() == dq.back())
+  while (!stk.empty() && !q.empty())
   {
-    dq.pop_front();
-    dq.pop_back();
+    if (stk.top() != q.front())
+    {
+      return false;
+    }
+    stk.pop();
+    q.pop();
   }
 
-  return dq.size() <= 1;
+  return stk.empty() && q.empty();
 }
 
 int main()
