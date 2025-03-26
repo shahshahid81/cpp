@@ -2,7 +2,7 @@
 #include <string>
 #include <vector>
 
-using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;`
 
 int main()
 {

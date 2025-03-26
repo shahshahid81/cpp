@@ -1,11 +1,14 @@
 #include <iostream>
 #include <cstring> // for c-style string functions
 #include <cctype>  // for character-based functions
+#include <limits>
 #include <climits>
 
 using std::cin;
 using std::cout;
 using std::endl;
+using std::numeric_limits;
+using std::streamsize;
 
 int main()
 {
@@ -33,6 +36,11 @@ int main()
   cout << "Your full name is " << full_name << endl;
 
   cout << "-------------------------------" << endl;
+
+  // Since we are using getline, to avoid any issues, we are calling clear and ignore to remove old unread data from stream so that getline will read new data properly
+  cin.clear();
+  cin.ignore(numeric_limits<streamsize>::max(), '\n');
+
   // cout << "Enter your full name: ";
   // cin >> full_name;
 

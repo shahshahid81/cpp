@@ -28,11 +28,14 @@ public:
   {
     balance += bal;
     cout << "In deposit" << endl;
+    return true;
   }
+
   bool withdraw(double bal)
   {
     balance -= bal;
     cout << "In withdraw" << endl;
+    return true;
   }
 };
 

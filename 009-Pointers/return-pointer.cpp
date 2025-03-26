@@ -1,12 +1,13 @@
 #include <iostream>
 
-using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;`
 
 int *create_array(size_t size, int init_value = 0)
 {
     // Important thing here is we are returning pointer which is pointing to heap instead of stack.
     // If we use stack here, the memory allocated will be free after the execution of the function which will result in error.
     // Heap Memory is used which will be preserved unless de allocated.
+    // int new_storage[size]; // This will cause segmentation fault because once the data is retruned, it will be deallocated from the stack.
     int *new_storage{nullptr};
     new_storage = new int[size];
     for (size_t i{0}; i < size; ++i)
@@ -20,6 +21,7 @@ void display(const int *const array, size_t size)
         cout << array[i] << " ";
     cout << endl;
 }
+
 int main()
 {
     int *my_array{nullptr};

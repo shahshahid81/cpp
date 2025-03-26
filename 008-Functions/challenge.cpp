@@ -42,7 +42,7 @@ If the user enters 'Q' or 'q' then you should display 'Goodbye" and the program 
 #include <vector>
 #include <string>
 
-using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;` 
+using namespace std; // Avoid using whole namespace, better practice is to either not use `using` or include only needed items like `using std::cout;`
 
 void get_user_choice(char &option)
 {

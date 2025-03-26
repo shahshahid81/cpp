@@ -69,7 +69,7 @@ int main()
 
     vec.push_back(Move{10});
     /**
-    The above statement works by first creating temporary Move object which has pointer to int data and has value 10. 
+    The above statement works by first creating temporary Move object which has pointer to int data and has value 10.
     Let us assume the memory address of above value is 1000.
     Then instead of creating a copy of `Move{10}` and passing it to vector, we move the data.
     This is done by using the memory address of the `Move{10}`'s data which is 1000 and copy it to our pointer and we null out the pointer once copy is done.

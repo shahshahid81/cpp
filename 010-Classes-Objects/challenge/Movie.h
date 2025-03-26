@@ -12,7 +12,7 @@ private:
 
 public:
   Movie(const std::string &movie_name, const std::string &rating, const int watch_count);
-  Movie(Movie && source);
+  Movie(Movie &&source);
   void display() const;
   bool is_movie_name_equal(const std::string &movie_name) const;
   void increment_movie_watch_count(const std::string &movie_name);

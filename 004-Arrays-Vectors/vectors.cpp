@@ -1,4 +1,3 @@
-using std::endl;
 #include <iostream>
 #include <vector>
 

@@ -46,7 +46,7 @@ int main()
   print('A'); //  character is always promoted to int should print 65 ASCII ('A')
 
   print(123.5);  // double
-  print(123.3F);  // Float is promoted to double. Here, literal suffix `F` for float is used. By default, cpp will interpret 123.5 as double. To tell the compiler to interpret it as float, literal is used. Other types have literals as well.
+  print(123.3F); // Float is promoted to double. Here, literal suffix `F` for float is used. By default, cpp will interpret 123.5 as double. To tell the compiler to interpret it as float, literal is used. Other types have literals as well.
 
   print("C-style string"); // C-style string is converted to a C++ string
 

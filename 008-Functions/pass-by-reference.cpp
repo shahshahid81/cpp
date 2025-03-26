@@ -4,7 +4,6 @@
 
 using namespace std;
 
-
 // When reference is used, no copy is made and original value is modified in case of any modification.
 void pass_by_ref1(int &num);
 void pass_by_ref2(string &s);

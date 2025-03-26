@@ -48,9 +48,8 @@ int main()
 
   result = num1 * 10 + num2;
 
-  cout << 5 / 10 << endl;
-
-  cout << 5.0 / 10.0 << endl;
+  cout << "5 / 10 = " << 5 / 10 << endl;
+  cout << "5.0 / 10.0 = " << 5.0 / 10.0 << endl;
 
   // Modulo works only with integer types
   // cout << 5.5 % 3.1 << endl;
